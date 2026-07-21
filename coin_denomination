@@ -1,0 +1,14 @@
+n = int(input("enter the number of elements in the array: "))
+arr = []
+for i in range(n):
+    element = int(input(f"enter element {i + 1}: "))
+    arr.append(element)
+b = int(input("enter the target sum: "))
+count = 0
+def coin(arr,b):
+    count = 0
+    for coin in arr:
+        count = count + (b//coin)
+        b = b % coin
+    return count
+print(coin(arr,b))
